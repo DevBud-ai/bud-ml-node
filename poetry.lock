@@ -879,6 +879,25 @@ files = [
 ]
 
 [[package]]
+name = "replicate"
+version = "0.8.1"
+description = "Python client for Replicate"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "replicate-0.8.1.tar.gz", hash = "sha256:fc1df41b57b78101d1e0288becd9b5a0d0acfba811a02dc67eb175f682a5e104"},
+]
+
+[package.dependencies]
+packaging = "*"
+pydantic = ">1"
+requests = ">2"
+
+[package.extras]
+dev = ["black", "mypy", "pytest", "responses", "ruff"]
+
+[[package]]
 name = "requests"
 version = "2.28.2"
 description = "Python HTTP for Humans."
@@ -1196,4 +1215,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "af85f4b2cd73a7a5a0c3fbb90ae07cb0d10a72b6ef359accf409403f297eaa1a"
+content-hash = "67964433beebd084e3845f82dd8713df055a6bf89ad770d9a43c71d727349fcd"

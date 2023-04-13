@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
-from llm.llm import get_openai_result
+from llm.llm import get_openai_result, get_replicate_result
 from models.api import AskLLMRequest
 
 
@@ -8,8 +8,13 @@ app = FastAPI()
 
 @app.post("/ask-llm")
 def ask_llm(requests: AskLLMRequest):
+    result = None
+    if requests.channel is 'openai':
+        result = get_openai_result(requests)
+    else:
+        result = get_replicate_result(requests)
     
-    return get_openai_result(requests)
+    return result 
 
 
 
