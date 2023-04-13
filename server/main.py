@@ -62,10 +62,10 @@ def ask_llm(requests: AskLLMRequest):
         raise HTTPException(status_code=400, detail="Unable to identify the right model to process this request")
     
     return {
-        "model_identified": model_identified,
+        "model_identified": model_identified,   
         "result": result
     }
 
 
 def start():
-    uvicorn.run("server.main:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("server.main:app", host="0.0.0.0", port=9080, reload=True)
