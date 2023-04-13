@@ -1,12 +1,15 @@
 from fastapi import FastAPI
 import uvicorn
+from llm.llm import get_openai_result
+from models.api import AskLLMRequest
 
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.post("/ask-llm")
+def ask_llm(requests: AskLLMRequest):
+    
+    return get_openai_result(requests)
 
 
 
