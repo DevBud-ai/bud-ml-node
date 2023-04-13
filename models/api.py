@@ -4,8 +4,10 @@ from typing import List, Optional
 
 class AskLLMRequest(BaseModel):
     prompt: str
-    api_key: str
+    openai_api_key: str
+    replicate_api_key: Optional[str]=''
     channel: Optional[str]='openai'
+    type: Optional[str]='model_recoginition'
     model: Optional[str]='text-davinci-003'
     temperature: Optional[int]=0.8
     max_tokens: Optional[int]=256
